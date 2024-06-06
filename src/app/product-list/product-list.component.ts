@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { ApiService, IProduct } from '../services/api.service';
 import { CartService } from '../services/cart.service';
 

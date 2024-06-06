@@ -14,11 +14,13 @@ export class ApiService {
 export interface IProduct {
   id: number;
   title: string;
-  price: string;
+  price: number;
   category: string;
   description: string;
   image: string;
   rating: IRating;
+  quantity:number,
+  totalPrice:number
 }
 
 interface IRating {

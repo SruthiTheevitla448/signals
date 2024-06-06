@@ -13,6 +13,7 @@
           <div class="col-md-9">
             <h1 class="title">{{row.title}}</h1>
             <p>{{row.description}}</p>
+            <p (click)="decreaseValue(row)">-</p>{{row.quantity}}<p (click)="increaseValue(row)">+</p>
           </div>
           <!-- <div class="col-md-1 d-flex align-items-center justify-content-between">
             <div class="btn">+</div>

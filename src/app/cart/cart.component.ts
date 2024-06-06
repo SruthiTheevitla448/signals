@@ -9,14 +9,20 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent {
   cartItems: IProduct[] = [];
+  quantity: any = 0
   constructor(public cartService: CartService) { }
 
   ngOnInit() {
-  
+
   }
 
-  remove(i: number){
+  remove(i: number) {
     this.cartService.removeProductSignal(i);
   }
-
+  increaseValue(product: IProduct) {
+    this.cartService.addProductSignal(product)
+  }
+  decreaseValue(product: IProduct) {
+    this.cartService.reduceProductSignal(product)
+  }
 }
