@@ -61,7 +61,9 @@ export class CartService {
       let ind = val.findIndex(e => e.id == product.id)
       if (val[ind].quantity == 1) {
         val.splice(ind, 1)
+
       }
+
       else {
         val[ind].quantity = val[ind].quantity - 1
       }
@@ -69,7 +71,15 @@ export class CartService {
     this.api.products()?.forEach(a => {
       if (a.id === product.id) {
         a.rating.count = a.rating.count + 1;
+        this.cartItems.mutate((val) => {
+          let ind = val.findIndex(e => e.id == product.id)
+          if (ind == -1) {
+            a.quantity = 0
+          }
+        })
       }
     })
+    console.log(this.api.products())
   }
+
 }

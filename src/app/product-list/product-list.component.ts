@@ -17,4 +17,7 @@ export class ProductListComponent {
   addToCart(product: IProduct){
     this.castService.addProductSignal(product);
   }
+  decrease(product: IProduct){
+    this.castService.reduceProductSignal(product)
+  }
 }
